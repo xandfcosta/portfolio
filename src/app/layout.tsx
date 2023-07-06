@@ -2,11 +2,11 @@ import { ReactNode } from 'react'
 
 import './globals.css'
 // eslint-disable-next-line camelcase
-import { Roboto_Flex as Roboto } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
 
-const roboto = Roboto({
+const montserrat = Montserrat({
   subsets: ['latin'],
-  variable: '--font-roboto',
+  variable: '--font-montserrat',
   display: 'swap',
 })
 
@@ -19,7 +19,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body
-        className={`${roboto.variable} bg-zinc-900 font-sans text-gray-100`}
+        className={`${montserrat.variable} bg-zinc-100 font-sans text-gray-900`}
       >
         {children}
       </body>

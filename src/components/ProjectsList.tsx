@@ -49,7 +49,7 @@ export default async function ProjectsList() {
 
   if (projects.length === 0) {
     return (
-      <h1 className="text-bold text-zinc-500 mt-6">
+      <h1 className="text-bold text-zinc-500 mt-6 text-sm md:text-lg">
         Erro ao carregar os projetos, recarregue a página por favor
       </h1>
     )
@@ -87,12 +87,14 @@ export default async function ProjectsList() {
             key={`${index}_${project.name}`}
             href={project.url}
             target="_blank"
-            className="flex justify-between relative bg-zinc-800 rounded-lg p-6 h-[100px]"
+            className="flex justify-between relative shadow-md rounded-lg p-6 h-[100px]"
             rel="noreferrer"
           >
-            <div className="absolute top-[50%] translate-y-[-50%] left-2 w-1 h-[80%] rounded-full bg-gradient-to-b from-red-400 to-red-700"></div>
+            <div className="absolute top-[50%] translate-y-[-50%] left-2 w-1 h-[80%] rounded-full bg-gradient-to-b from-yellow-400 to-yellow-700"></div>
             <div>
-              <h1 className="text-lg md:text-xl font-bold">{project.name}</h1>
+              <h1 className="text-lg md:text-xl font-bold text-ellipsis whitespace-nowrap">
+                {project.name}
+              </h1>
               <p className="text-xs md:text-sm text-zinc-400">{project.lang}</p>
             </div>
             <div className="relative h-full aspect-square md:max-h-[300px] md:max-w-[300px]">
@@ -101,7 +103,7 @@ export default async function ProjectsList() {
                 src={imgLink}
                 alt={`${cssName ? project.lang : 'generic'} logo`}
                 sizes="(max-width: 768px) 50px, (max-width: 1200px) 300px"
-                className="bg-zinc-900 h-full w-auto rounded-lg"
+                className=" h-full w-auto"
               />
             </div>
           </a>
